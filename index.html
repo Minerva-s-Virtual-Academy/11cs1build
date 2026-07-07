@@ -1,0 +1,117 @@
+<div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333333; max-width: 900px; margin: auto; padding: 20px;">
+    <header style="border-bottom: 3px solid #007BA6; padding-bottom: 10px; margin-bottom: 30px;">
+        <h1 style="color: #007ba6; margin-bottom: 5px;">Data Encryption: Post-Lesson Practice</h1>
+        <p style="color: #00796b; font-weight: bold; font-style: italic;">Instruction: Complete the interactive components below to master algorithm implementation and scenario analysis. (Est. Time: 30 mins)</p>
+    </header>
+
+    <section style="margin-bottom: 40px;">
+        <h2 style="color: #007ba6;">1. Interactive Cipher Arena</h2>
+        <p style="color: #00796b;">Instruction: Test your mechanics! Calculate your answers on paper, enter them below, and click "Check Answer" for immediate evaluation.</p>
+        
+        <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 20px;">
+            <h3 style="color: #007ba6; margin-top: 0;">Challenge A: Caesar Cipher Shift</h3>
+            <p>Encrypt the <strong style="color: #c62828;">plaintext</strong> word <strong>"NETWORK"</strong> using a Caesar Cipher with a right shift of <strong>4</strong>.</p>
+            <input type="text" id="caesarInput" placeholder="TYPE YOUR CIPHERTEXT HERE" style="text-transform: uppercase; padding: 10px; width: 60%; border: 1px solid #ccc; border-radius: 4px; font-weight: bold;">
+            <button onclick="checkCaesar()" style="background-color: #0056B3; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold; margin-left: 10px;">Check Answer</button>
+            <div id="caesarFeedback" style="margin-top: 15px; font-weight: bold; display: none; padding: 10px; border-radius: 4px;"></div>
+        </div>
+
+        <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 20px;">
+            <h3 style="color: #007ba6; margin-top: 0;">Challenge B: Rail Fence Transposition</h3>
+            <p>Encrypt the <strong style="color: #c62828;">plaintext</strong> word <strong>"CIPHER"</strong> using a Rail Fence Cipher with a fence depth of <strong>2</strong> rails.</p>
+            <input type="text" id="railInput" placeholder="TYPE YOUR CIPHERTEXT HERE" style="text-transform: uppercase; padding: 10px; width: 60%; border: 1px solid #ccc; border-radius: 4px; font-weight: bold;">
+            <button onclick="checkRail()" style="background-color: #0056B3; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold; margin-left: 10px;">Check Answer</button>
+            <div id="railFeedback" style="margin-top: 15px; font-weight: bold; display: none; padding: 10px; border-radius: 4px;"></div>
+        </div>
+    </section>
+
+    <section style="margin-bottom: 40px;">
+        <h2 style="color: #007ba6;">2. Scenario Suitability Evaluation</h2>
+        <p style="color: #00796b;">Instruction: Analyze each real-world context and select the single most appropriate option. Click your choice to review structural exam feedback.</p>
+
+        <div style="background-color: #ffffff; padding: 20px; border: 1px solid #007BA6; border-radius: 6px; margin-bottom: 20px;">
+            <p style="font-weight: bold; margin-top: 0;">Question 1: An embedded micro-controller inside a smart medical bracelet has extremely minimal processing capabilities and constrained power. It needs a quick, low-overhead way to mildly obfuscate non-critical baseline telemetry before a more advanced secondary protocol handles network transmission. Which historic cipher is best suited for this extreme hardware limit?</p>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <label style="cursor: pointer; padding: 5px;" onclick="showMcqFeedback(1, 'A', false)"><input type="radio" name="mcq1" style="margin-right: 10px;"> Vigenére Cipher</label>
+                <label style="cursor: pointer; padding: 5px;" onclick="showMcqFeedback(1, 'B', true)"><input type="radio" name="mcq1" style="margin-right: 10px;"> Caesar Cipher</label>
+                <label style="cursor: pointer; padding: 5px;" onclick="showMcqFeedback(1, 'C', false)"><input type="radio" name="mcq1" style="margin-right: 10px;"> Pigpen Cipher</label>
+            </div>
+            <div id="mcq1Feedback" style="margin-top: 15px; font-weight: bold; display: none; padding: 10px; border-radius: 4px;"></div>
+        </div>
+
+        <div style="background-color: #ffffff; padding: 20px; border: 1px solid #007BA6; border-radius: 6px; margin-bottom: 20px;">
+            <p style="font-weight: bold; margin-top: 0;">Question 2: A retro game developer wants an algorithm to hide game dialogue strings within binary data to stop players from seeing spoilers using raw text editors. The frequency of single letters must be hidden, meaning common vowels should not always map to the exact same symbol across a sentence. Which cipher fulfills this specific requirement?</p>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <label style="cursor: pointer; padding: 5px;" onclick="showMcqFeedback(2, 'A', true)"><input type="radio" name="mcq2" style="margin-right: 10px;"> Vigenére Cipher</label>
+                <label style="cursor: pointer; padding: 5px;" onclick="showMcqFeedback(2, 'B', false)"><input type="radio" name="mcq2" style="margin-right: 10px;"> Caesar Cipher</label>
+                <label style="cursor: pointer; padding: 5px;" onclick="showMcqFeedback(2, 'C', false)"><input type="radio" name="mcq2" style="margin-right: 10px;"> Rail Fence Cipher</label>
+            </div>
+            <div id="mcq2Feedback" style="margin-top: 15px; font-weight: bold; display: none; padding: 10px; border-radius: 4px;"></div>
+        </div>
+
+        <div style="background-color: #ffffff; padding: 20px; border: 1px solid #007BA6; border-radius: 6px; margin-bottom: 20px;">
+            <p style="font-weight: bold; margin-top: 0;">Question 3: A secure system designer requires an algorithm where the letter contents themselves do not change alphabetic state values, but instead, the physical arrangement and layout positions of the original sequence are structurally reordered. Which cipher class must they choose?</p>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <label style="cursor: pointer; padding: 5px;" onclick="showMcqFeedback(3, 'A', false)"><input type="radio" name="mcq3" style="margin-right: 10px;"> Caesar Cipher</label>
+                <label style="cursor: pointer; padding: 5px;" onclick="showMcqFeedback(3, 'B', false)"><input type="radio" name="mcq3" style="margin-right: 10px;"> Pigpen Cipher</label>
+                <label style="cursor: pointer; padding: 5px;" onclick="showMcqFeedback(3, 'C', true)"><input type="radio" name="mcq3" style="margin-right: 10px;"> Rail Fence Cipher</label>
+            </div>
+            <div id="mcq3Feedback" style="margin-top: 15px; font-weight: bold; display: none; padding: 10px; border-radius: 4px;"></div>
+        </div>
+    </section>
+</div>
+
+<script>
+    function checkCaesar() {
+        const input = document.getElementById('caesarInput').value.trim().toUpperCase();
+        const feedback = document.getElementById('caesarFeedback');
+        feedback.style.display = 'block';
+        
+        if (input === 'REBOSVO') {
+            feedback.style.backgroundColor = '#e0f2f1';
+            feedback.style.color = '#00796B';
+            feedback.innerHTML = 'Correct! N(+4)&rarr;R, E(+4)&rarr;I, T(+4)&rarr;X... Wait! Let\'s double-check the shift values: N&rarr;R, E&rarr;I, T&rarr;X, W&rarr;A, O&rarr;S, R&rarr;V, K&rarr;O. Fantastic accurate execution of alphabetic mapping.';
+        } else {
+            feedback.style.backgroundColor = '#ffebee';
+            feedback.style.color = '#c62828';
+            feedback.innerHTML = 'Incorrect. Hint: Shift each letter forward by 4 spaces (A becomes E, B becomes F). Try mapping N &rarr; R, and remember that the alphabet wraps around when it hits Z!';
+        }
+    }
+
+    function checkRail() {
+        const input = document.getElementById('railInput').value.trim().toUpperCase();
+        const feedback = document.getElementById('railFeedback');
+        feedback.style.display = 'block';
+        
+        if (input === 'CPR IHE') {
+            feedback.style.backgroundColor = '#e0f2f1';
+            feedback.style.color = '#00796B';
+            feedback.innerHTML = 'Correct! Writing "CIPHER" in a zig-zag across two rows gives Row 1: C . P . H and Row 2: . I . E . R. Reading row by row gives CPRIHE.';
+        } else {
+            feedback.style.backgroundColor = '#ffebee';
+            feedback.style.color = '#c62828';
+            feedback.innerHTML = 'Incorrect. Hint: Place letters on alternating lines. Row 1 gets characters 1, 3, and 5 (C, P, H). Row 2 gets characters 2, 4, and 6 (I, E, R). Combine Row 1 followed by Row 2.';
+        }
+    }
+
+    function showMcqFeedback(questionNum, choice, isCorrect) {
+        const feedbackBox = document.getElementById('mcq' + questionNum + 'Feedback');
+        feedbackBox.style.display = 'block';
+        
+        if (isCorrect) {
+            feedbackBox.style.backgroundColor = '#e0f2f1';
+            feedbackBox.style.color = '#00796B';
+            if (questionNum === 1) {
+                feedbackBox.innerHTML = 'Correct! The Caesar Cipher requires minimal memory resources and single addition calculations, matching extreme hardware constraints perfectly.';
+            } else if (questionNum === 2) {
+                feedbackBox.innerHTML = 'Correct! Vigenére uses multiple alphabetic keys (polyalphabetic), which ensures frequency analysis cannot easily decipher standard repeating patterns.';
+            } else if (questionNum === 3) {
+                feedbackBox.innerHTML = 'Correct! The Rail Fence Cipher is a classic transposition cipher, meaning elements maintain their exact initial visual identity but change positioning constraints.';
+            }
+        } else {
+            feedbackBox.style.backgroundColor = '#ffebee';
+            feedbackBox.style.color = '#c62828';
+            feedbackBox.innerHTML = 'Incorrect choice for Question ' + questionNum + '. Review your notes on algorithmic properties and think about substitution versus transposition limits.';
+        }
+    }
+</script>
