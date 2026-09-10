@@ -18,7 +18,7 @@
 
         <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 20px;">
             <h3 style="color: #007ba6; margin-top: 0;">Challenge B: Rail Fence Transposition</h3>
-            <p>Encrypt the <strong style="color: #c62828;">plaintext</strong> word <strong>"CIPHER"</strong> using a Rail Fence Cipher with a fence depth of <strong>2</strong> rails.</p>
+            <p>Encrypt the <strong style="color: #c62828;">plaintext</strong> word <strong>"CIPHER"</strong> using a Rail Fence Cipher with a depth of <strong>2</strong> rails.</p>
             <input type="text" id="railInput" placeholder="TYPE YOUR CIPHERTEXT HERE" style="text-transform: uppercase; padding: 10px; width: 60%; border: 1px solid #ccc; border-radius: 4px; font-weight: bold;">
             <button onclick="checkRail()" style="background-color: #0056B3; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold; margin-left: 10px;">Check Answer</button>
             <div id="railFeedback" style="margin-top: 15px; font-weight: bold; display: none; padding: 10px; border-radius: 4px;"></div>
@@ -27,12 +27,12 @@
 
     <section style="margin-bottom: 40px;">
         <h2 style="color: #007ba6;">2. Scenario Suitability Evaluation</h2>
-        <p style="color: #00796b;">Instruction: Analyze each real-world context and select the single most appropriate option. Click your choice to review structural exam feedback.</p>
+        <p style="color: #00796b;">Instruction: Read each scenario and choose the best cipher for the job. Click your choice to see feedback.</p>
 
         <div style="background-color: #ffffff; padding: 20px; border: 1px solid #007BA6; border-radius: 6px; margin-bottom: 20px;">
-            <p style="font-weight: bold; margin-top: 0;">Question 1: An embedded micro-controller inside a smart medical bracelet has extremely minimal processing capabilities and constrained power. It needs a quick, low-overhead way to mildly obfuscate non-critical baseline telemetry before a more advanced secondary protocol handles network transmission. Which historic cipher is best suited for this extreme hardware limit?</p>
+            <p style="font-weight: bold; margin-top: 0;">Question 1: A low-power smart wristband has very little processing power. It needs a quick, simple way to hide basic data before sending it out. Which simple historical cipher requires the least computational effort?</p>
             <div style="display: flex; flex-direction: column; gap: 10px;">
-                <label style="cursor: pointer; padding: 5px;" onclick="showMcqFeedback(1, 'A', false)"><input type="radio" name="mcq1" style="margin-right: 10px;"> Vigenére Cipher</label>
+                <label style="cursor: pointer; padding: 5px;" onclick="showMcqFeedback(1, 'A', false)"><input type="radio" name="mcq1" style="margin-right: 10px;"> Vigenère Cipher</label>
                 <label style="cursor: pointer; padding: 5px;" onclick="showMcqFeedback(1, 'B', true)"><input type="radio" name="mcq1" style="margin-right: 10px;"> Caesar Cipher</label>
                 <label style="cursor: pointer; padding: 5px;" onclick="showMcqFeedback(1, 'C', false)"><input type="radio" name="mcq1" style="margin-right: 10px;"> Pigpen Cipher</label>
             </div>
@@ -40,9 +40,9 @@
         </div>
 
         <div style="background-color: #ffffff; padding: 20px; border: 1px solid #007BA6; border-radius: 6px; margin-bottom: 20px;">
-            <p style="font-weight: bold; margin-top: 0;">Question 2: A retro game developer wants an algorithm to hide game dialogue strings within binary data to stop players from seeing spoilers using raw text editors. The frequency of single letters must be hidden, meaning common vowels should not always map to the exact same symbol across a sentence. Which cipher fulfills this specific requirement?</p>
+            <p style="font-weight: bold; margin-top: 0;">Question 2: A game developer wants to hide story text in game files so players can't read spoilers. They need a cipher where the same letter (like 'E') gets encrypted into different symbols throughout a sentence so it cannot be easily decoded. Which cipher does this?</p>
             <div style="display: flex; flex-direction: column; gap: 10px;">
-                <label style="cursor: pointer; padding: 5px;" onclick="showMcqFeedback(2, 'A', true)"><input type="radio" name="mcq2" style="margin-right: 10px;"> Vigenére Cipher</label>
+                <label style="cursor: pointer; padding: 5px;" onclick="showMcqFeedback(2, 'A', true)"><input type="radio" name="mcq2" style="margin-right: 10px;"> Vigenère Cipher</label>
                 <label style="cursor: pointer; padding: 5px;" onclick="showMcqFeedback(2, 'B', false)"><input type="radio" name="mcq2" style="margin-right: 10px;"> Caesar Cipher</label>
                 <label style="cursor: pointer; padding: 5px;" onclick="showMcqFeedback(2, 'C', false)"><input type="radio" name="mcq2" style="margin-right: 10px;"> Rail Fence Cipher</label>
             </div>
@@ -50,7 +50,7 @@
         </div>
 
         <div style="background-color: #ffffff; padding: 20px; border: 1px solid #007BA6; border-radius: 6px; margin-bottom: 20px;">
-            <p style="font-weight: bold; margin-top: 0;">Question 3: A secure system designer requires an algorithm where the letter contents themselves do not change alphabetic state values, but instead, the physical arrangement and layout positions of the original sequence are structurally reordered. Which cipher class must they choose?</p>
+            <p style="font-weight: bold; margin-top: 0;">Question 3: A security system needs an algorithm that does NOT swap letters for other letters, but instead scrambles the order of the original letters in the message. Which cipher fits this description?</p>
             <div style="display: flex; flex-direction: column; gap: 10px;">
                 <label style="cursor: pointer; padding: 5px;" onclick="showMcqFeedback(3, 'A', false)"><input type="radio" name="mcq3" style="margin-right: 10px;"> Caesar Cipher</label>
                 <label style="cursor: pointer; padding: 5px;" onclick="showMcqFeedback(3, 'B', false)"><input type="radio" name="mcq3" style="margin-right: 10px;"> Pigpen Cipher</label>
@@ -67,30 +67,31 @@
         const feedback = document.getElementById('caesarFeedback');
         feedback.style.display = 'block';
         
-        if (input === 'REBOSVO') {
+        if (input === 'RIXASVO') {
             feedback.style.backgroundColor = '#e0f2f1';
             feedback.style.color = '#00796B';
-            feedback.innerHTML = 'Correct! N(+4)&rarr;R, E(+4)&rarr;I, T(+4)&rarr;X... Wait! Let\'s double-check the shift values: N&rarr;R, E&rarr;I, T&rarr;X, W&rarr;A, O&rarr;S, R&rarr;V, K&rarr;O. Fantastic accurate execution of alphabetic mapping.';
+            feedback.innerHTML = 'Correct! N(+4)→R, E(+4)→I, T(+4)→X, W(+4)→A, O(+4)→S, R(+4)→V, K(+4)→O. Great job with the letter shifts and alphabet wrap-around!';
         } else {
             feedback.style.backgroundColor = '#ffebee';
             feedback.style.color = '#c62828';
-            feedback.innerHTML = 'Incorrect. Hint: Shift each letter forward by 4 spaces (A becomes E, B becomes F). Try mapping N &rarr; R, and remember that the alphabet wraps around when it hits Z!';
+            feedback.innerHTML = 'Incorrect. Hint: Shift each letter forward by 4 positions in the alphabet (e.g., N → R, E → I). Remember that W wraps around past Z to become A!';
         }
     }
 
     function checkRail() {
-        const input = document.getElementById('railInput').value.trim().toUpperCase();
+        // Remove spaces so both "CPEIHR" and "CPE IHR" are accepted as correct
+        const input = document.getElementById('railInput').value.replace(/\s+/g, '').toUpperCase();
         const feedback = document.getElementById('railFeedback');
         feedback.style.display = 'block';
         
-        if (input === 'CPR IHE') {
+        if (input === 'CPEIHR') {
             feedback.style.backgroundColor = '#e0f2f1';
             feedback.style.color = '#00796B';
-            feedback.innerHTML = 'Correct! Writing "CIPHER" in a zig-zag across two rows gives Row 1: C . P . H and Row 2: . I . E . R. Reading row by row gives CPRIHE.';
+            feedback.innerHTML = 'Correct! Writing "CIPHER" in a zig-zag across two rows gives:<br>Row 1 (positions 1, 3, 5): C . P . E<br>Row 2 (positions 2, 4, 6): . I . H . R<br>Reading line by line gives CPEIHR.';
         } else {
             feedback.style.backgroundColor = '#ffebee';
             feedback.style.color = '#c62828';
-            feedback.innerHTML = 'Incorrect. Hint: Place letters on alternating lines. Row 1 gets characters 1, 3, and 5 (C, P, H). Row 2 gets characters 2, 4, and 6 (I, E, R). Combine Row 1 followed by Row 2.';
+            feedback.innerHTML = 'Incorrect. Hint: Place letters on alternating lines. Top row gets positions 1, 3, 5 (C, P, E). Bottom row gets positions 2, 4, 6 (I, H, R). Combine row 1 followed by row 2.';
         }
     }
 
@@ -102,16 +103,16 @@
             feedbackBox.style.backgroundColor = '#e0f2f1';
             feedbackBox.style.color = '#00796B';
             if (questionNum === 1) {
-                feedbackBox.innerHTML = 'Correct! The Caesar Cipher requires minimal memory resources and single addition calculations, matching extreme hardware constraints perfectly.';
+                feedbackBox.innerHTML = 'Correct! The Caesar Cipher uses simple mathematical addition per character, making it very lightweight for basic hardware.';
             } else if (questionNum === 2) {
-                feedbackBox.innerHTML = 'Correct! Vigenére uses multiple alphabetic keys (polyalphabetic), which ensures frequency analysis cannot easily decipher standard repeating patterns.';
+                feedbackBox.innerHTML = 'Correct! Vigenère uses a repeating keyword to shift letters differently (polyalphabetic), preventing letter frequency analysis.';
             } else if (questionNum === 3) {
-                feedbackBox.innerHTML = 'Correct! The Rail Fence Cipher is a classic transposition cipher, meaning elements maintain their exact initial visual identity but change positioning constraints.';
+                feedbackBox.innerHTML = 'Correct! The Rail Fence Cipher is a transposition cipher—it keeps the original letters intact and rearranges their positions.';
             }
         } else {
             feedbackBox.style.backgroundColor = '#ffebee';
             feedbackBox.style.color = '#c62828';
-            feedbackBox.innerHTML = 'Incorrect choice for Question ' + questionNum + '. Review your notes on algorithmic properties and think about substitution versus transposition limits.';
+            feedbackBox.innerHTML = 'Incorrect choice for Question ' + questionNum + '. Think about whether the cipher substitutes letters with new symbols or scrambles their existing positions.';
         }
     }
 </script>
